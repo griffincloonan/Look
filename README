@@ -1,0 +1,34 @@
+Programmer: Griffin Cloonan 
+				6/6/16
+
+Makefile provided for compliation: make Look
+Compiles with -Wall -Werror -O3 flags
+
+This program implements the Unix 'look' command, with a few minor changes. 
+
+Function: This command prints out all of the lines from a specified file 
+ that begin with a speficied string prefix. The original look command
+ assumes that the target file is already sorted but this version will
+ automatically sort the file before seaching for the string prefix. 
+
+ If no file is specified for searching, then the program will use 
+ /usr/share/dict/words as the target file.
+
+Usage: look [-df] [-t termchar] string [file ...]
+
+-d:   Only alphanumeric characters (i.e. 0 - 9 and A - z) are compared
+
+-f:   The case of alphabetic characters are ignored in the search string, 
+      thus printing out both upper and lower case matches 
+
+-t:   A termination character is specified and only the search string up 
+      to and including that character will be searched for 
+		(e.g. 
+				./Look -t i pick file.txt	
+
+				would be the same as
+
+				./Look pi file.txt
+		)
+
+https://bitbucket.org/Gcloonan/look
